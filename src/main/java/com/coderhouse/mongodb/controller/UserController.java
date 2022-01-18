@@ -3,6 +3,7 @@ package com.coderhouse.mongodb.controller;
 import com.coderhouse.mongodb.model.User;
 import com.coderhouse.mongodb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
 public class UserController {
 
     @Autowired
+    @Qualifier("userServiceImpl")
     UserService service;
 
     @PostMapping("/user")
@@ -24,10 +26,10 @@ public class UserController {
         return service.findAll();
     }
 
-    @GetMapping("/user/")
-    public User findByName(@RequestParam String name) {
-        return service.findByName(name);
-    }
+//    @GetMapping("/user")
+//    public User findByName(@RequestParam String name) {
+//        return service.findByName(name);
+//    }
 
     @GetMapping("/user")
     public List<User> findUserByAgeGreater(@RequestParam int age) {
