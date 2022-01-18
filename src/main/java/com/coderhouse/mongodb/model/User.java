@@ -12,13 +12,15 @@ public class User {
     private String name;
     private int age;
     private String phone;
+    private String country;
 
     public User() {}
 
-    public User(String name, int age, String phone) {
+    public User(String name, int age, String phone, String country) {
         this.name = name;
         this.age = age;
         this.phone = phone;
+        this.country = country;
     }
 
     public int getAge() {
@@ -51,5 +53,13 @@ public class User {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }
